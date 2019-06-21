@@ -1,26 +1,29 @@
-import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import React, { Fragment } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse, MDBNavItem, MDBFooter, MDBNavLink } from "mdbreact";
+import NavBar from './components/NavBar';
+import Infotron from './components/Infotron';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const App = () => (
+  <Router>
+    <div className="flyout">
+      <Fragment>
+
+        <NavBar />
+        <main>
+          <Infotron />
+        </main>
+        <MDBFooter color="indigo">
+          <p className="footer-copyright mb-0 py-3 text-center">
+            &copy; {new Date().getFullYear()} Copyright: <a href="https://www.MDBootstrap.com"> MDBootstrap.com </a>
+          </p>
+        </MDBFooter>
+      </Fragment>
     </div>
-  );
-}
+  </Router>
+);
+
 
 export default App;
