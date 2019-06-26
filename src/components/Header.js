@@ -6,7 +6,7 @@ import {
     } from "mdbreact";
 import logo from '../img/apl-logo.png';
 
-class Navbar extends Component {
+class Header extends Component {
 state = {
   isOpen: false
 };
@@ -25,13 +25,13 @@ render() {
         <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
           <MDBNavbarNav left>
             <MDBNavItem active>
-              <MDBNavLink to="#!">Home</MDBNavLink>
+              <MDBNavLink to="/">Home</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
-              <MDBNavLink to="#!">Past Sessions</MDBNavLink>
+              <MDBNavLink to="/Sessions">Past Sessions</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
-              <MDBNavLink to="#!">Feedback</MDBNavLink>
+              <MDBNavLink to="/About">Feedback</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
               <MDBDropdown>
@@ -62,4 +62,4 @@ render() {
   }
 }
 
-export default Navbar;
+export default Header;
