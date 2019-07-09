@@ -25,13 +25,7 @@ class SessionRow extends Component {
                                     <MDBCardText className="font-weight-bolder">
                                         {new Date(session.scheduledDate).toDateString()}
                                     </MDBCardText>    
-                                    <Link to={
-                                                { 
-                                                    pathname: "/Session/" + session.sessionId,
-                                                    sessionData: {session}
-                                                }
-                                            }
-                                            class="card-link">{session.name}</Link>                          
+                                    <Link to={'/Session/' + session.sessionId} class="card-link">{session.name}</Link>                          
                                 </MDBCardBody>
                             </MDBCard>
                         </MDBCol>

@@ -1,38 +1,44 @@
 import React, { Component } from "react";
 import { MDBContainer } from 'mdbreact'
+import ViewSessionInfo from './ViewSessionInfo';
 
 class ViewSession extends Component {
+    constructor(props) {
+        super(props);
+        const {id} = props.match.params;
+        console.log('page-id:' + id);
+        this.state = { session: null, sessionId: id};
+    }
 
-    state = {
-        user: null
-      }
     componentDidMount() {
-        const sessionData = this.props.location.sessionData
-        console.log('the data value is:' + this.props.location.sessionData.sessionId)
+        console.log('componentDidMount-page-id:' + this.state.sessionId);
+        var apiUrl = 'https://nzaplfunc.azurewebsites.net/api/session/' + this.state.sessionId + '?code=oUAghk6D9Kovq1BPL0I2ENZ7052qyACXXbLdvSi1IT7n5W0eLJsKgg==';
+        fetch(apiUrl)
+            .then(res => res.json())
+            .then((data) => {
+                this.setState({session: data});
+                console.log('componentDidMount' + JSON.stringify(data));
+            })
+            .catch(console.log)
     }
 
     render() {
-        return (
-            <MDBContainer>
+        //console.log(this.session.lenght>0?this.session.sessionId:'Test');
+        if (this.state.session == null)
+        {         
+            console.log('Render' +  JSON.stringify(this.state));
+            return (           
+                <div>Loading Data...</div>
+            );
+        }
+        else
+        {
+            console.log('Render' +  JSON.stringify(this.state));
+            return (           
+                <ViewSessionInfo session={this.state.session} />
+            );
+        }
 
-                <div className="embed-responsive embed-responsive-21by9">
-                    <iframe className="embed-responsive-item" src={this.props.sessionData.youtubeImageUrl}></iframe>
-                </div>
-
-                <div className="embed-responsive embed-responsive-16by9">
-                    <iframe className="embed-responsive-item" src={this.props.sessionData.youtubeImageUrl}></iframe>
-                </div>
-
-                <div className="embed-responsive embed-responsive-4by3">
-                    <iframe className="embed-responsive-item" src={this.props.sessionData.youtubeImageUrl}></iframe>
-                </div>
-                <div className="embed-responsive embed-responsive-1by1">
-                    <iframe className="embed-responsive-item" src={this.props.sessionData.youtubeImageUrl}></iframe>
-                </div>
-
-            </MDBContainer>
-
-        )
     }
 }
 
