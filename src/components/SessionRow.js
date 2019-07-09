@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import {Link} from "react-router-dom";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardHeader, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText } from "mdbreact";
 
 class SessionRow extends Component {
@@ -15,15 +16,22 @@ class SessionRow extends Component {
                         <MDBCol md="4">
                             <MDBCard style={{ width: "22rem", height: "25rem" }}>
                                 <MDBCardHeader color="primary-color-dark">{new Date(session.scheduledDate).toDateString()}</MDBCardHeader>
-                                <MDBCardImage className="img-fluid" href={session.youtubeLink} src={session.youtubeImageUrl} waves />
+                                <a href={session.youtubeLink} class="card-link"><MDBCardImage className="img-fluid" src={session.youtubeImageUrl} waves /></a>
                                 <MDBCardBody>
-                                    <MDBCardTitle>{session.name}</MDBCardTitle>
+                                    <MDBCardTitle >{session.name}</MDBCardTitle>
                                     <MDBCardText className="font-weight-bold">
                                         {session.presenter}
                                     </MDBCardText>
                                     <MDBCardText className="font-weight-bolder">
                                         {new Date(session.scheduledDate).toDateString()}
-                                    </MDBCardText>
+                                    </MDBCardText>    
+                                    <Link to={
+                                                { 
+                                                    pathname: "/Session/" + session.sessionId,
+                                                    sessionData: {session}
+                                                }
+                                            }
+                                            class="card-link">{session.name}</Link>                          
                                 </MDBCardBody>
                             </MDBCard>
                         </MDBCol>

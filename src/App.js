@@ -7,6 +7,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './components/HomePage';
 import SessionPage from './components/SessionPage';
+import ViewSession from './components/ViewSession';
 import About from './components/About';
 
 const App = () => (
@@ -16,6 +17,7 @@ const App = () => (
         <Header />
         <Route exact path="/" component={HomePage} />
         <Route exact path="/Sessions" component={SessionPage} />
+        <Route exact path="/Session/:id" component={ViewSession} />
         <Route exact path="/Abount" component={About} />
         <Footer />
       </Fragment>
