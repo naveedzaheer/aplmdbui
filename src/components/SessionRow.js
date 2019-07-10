@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardHeader, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText } from "mdbreact";
 
 class SessionRow extends Component {
@@ -14,20 +14,18 @@ class SessionRow extends Component {
                 <MDBRow className="pb-4">
                     {this.props.sessions.map((session) => (
                         <MDBCol md="4">
-                            <MDBCard style={{ width: "22rem", height: "25rem" }}>
-                                <MDBCardHeader color="primary-color-dark">{new Date(session.scheduledDate).toDateString()}</MDBCardHeader>
-                                <a href={session.youtubeLink} class="card-link"><MDBCardImage className="img-fluid" src={session.youtubeImageUrl} waves /></a>
-                                <MDBCardBody>
-                                    <MDBCardTitle >{session.name}</MDBCardTitle>
-                                    <MDBCardText className="font-weight-bold">
-                                        {session.presenter}
-                                    </MDBCardText>
-                                    <MDBCardText className="font-weight-bolder">
-                                        {new Date(session.scheduledDate).toDateString()}
-                                    </MDBCardText>    
-                                    <Link to={'/Session/' + session.sessionId} class="card-link">{session.name}</Link>                          
-                                </MDBCardBody>
-                            </MDBCard>
+                            <Link to={'/Session/' + session.sessionId} class="card-link">
+                                <MDBCard style={{ width: "22rem", height: "25rem" }}>
+                                    <MDBCardHeader color="light-blue darken-4">{new Date(session.scheduledDate).toDateString()}</MDBCardHeader>
+                                    <a href={session.youtubeLink} class="card-link"><MDBCardImage className="img-fluid" src={session.youtubeImageUrl} waves /></a>
+                                    <MDBCardBody>
+                                        <MDBCardTitle >{session.name}</MDBCardTitle>
+                                        <MDBCardText className="font-weight-bold">
+                                            {session.presenter}  <p class="blue-grey-text">({session.presenterRole}) at {session.presenterCompany}</p>
+                                        </MDBCardText>
+                                    </MDBCardBody>
+                                </MDBCard>
+                            </Link>
                         </MDBCol>
                     ))}
                 </MDBRow>

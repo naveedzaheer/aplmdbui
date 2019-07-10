@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardHeader, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText } from "mdbreact";
 import SessionRow from './SessionRow';
+import SessionTron from './SessionTron';
 
 class SessionPage extends Component {
     constructor() {
@@ -38,9 +39,7 @@ class SessionPage extends Component {
     render() {
         return (
             <MDBContainer>
-                <div className="mt-1">
-                    <h1 className="display-3">Available Sessions</h1>
-                </div>
+                <SessionTron />
                 {this.state.sessionBlocks.map((sessionBlock) => (
                     <SessionRow sessions={sessionBlock} />
                 ))}
