@@ -16,7 +16,7 @@ class SessionRow extends Component {
                         <MDBCol md="4">
                             <Link to={'/Session/' + session.sessionId} class="card-link">
                                 <MDBCard style={{ width: "22rem", height: "25rem" }}>
-                                    <MDBCardHeader color="light-blue darken-4">{new Date(session.scheduledDate).toDateString()}</MDBCardHeader>
+                                    <MDBCardHeader color="light-blue darken-4">{new Date(session.scheduledDate).toUTCString().replace('00:00:00 GMT','')}</MDBCardHeader>
                                     <a href={session.youtubeLink} class="card-link"><MDBCardImage className="img-fluid" src={session.youtubeImageUrl} waves /></a>
                                     <MDBCardBody>
                                         <MDBCardTitle >{session.name}</MDBCardTitle>

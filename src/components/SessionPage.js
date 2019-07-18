@@ -10,7 +10,7 @@ class SessionPage extends Component {
     }
 
     componentDidMount() {
-        fetch('https://nzaplfunc.azurewebsites.net/api/AllItems?code=gQN0nx45Sw1KTf1oIP0ojz0jaMksvoZaSuVvkGmNMtjDt5I0etnBKQ==')
+        fetch('https://nzaplfunc.azurewebsites.net/api/AllItemsTS?code=KHenUdB6xl6fy2L58oNwyxXg5JnhYzvkYUwuRm8vcR4MXrgEo03Dmg==')
             .then(res => res.json())
             .then((data) => {
                 this.setState({ sessions: data, totalItems: data.length, totalRows: Math.ceil(data.length / 3) });
