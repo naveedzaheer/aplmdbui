@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { MDBContainer, MDBRow, MDBCol, MDBBtn, MDBCard, MDBCardHeader, MDBCardBody, MDBCardImage, MDBCardTitle, MDBCardText } from "mdbreact";
 
 class HomeCards extends Component {
@@ -9,7 +10,7 @@ class HomeCards extends Component {
     }
 
     componentDidMount() {
-        fetch('https://nzaplfunc.azurewebsites.net/api/TopItems?code=wc6OAWPABVGO3M40205XKrpxmaDljp5avNmJS2vS2RIseVlljiYyzQ==')
+        fetch('https://nzaplfunc.azurewebsites.net/api/TopItemsTS?code=urnTxjc0tqa8CCfHmAW0U4Ro/BzZGL77W/5SZEnICbhQBt21uRuS7w==')
             .then(res => res.json())
             .then((data) => {
                 this.setState({ sessions: data })
@@ -23,20 +24,19 @@ class HomeCards extends Component {
                 <MDBRow className="pb-4">
                     {this.state.sessions.map((session) => (
                         <MDBCol md="4">
-                            <MDBCard style={{ width: "22rem", height: "25rem" }}>
-                                <MDBCardHeader color="primary-color-dark">{new Date(session.scheduledDate).toDateString()}</MDBCardHeader>
-                                <MDBCardImage className="img-fluid" href={session.youtubeLink} src={session.youtubeImageUrl} waves />
+                        <Link to={'/Session/' + session.sessionId} class="card-link">
+                            <MDBCard style={{ width: "22rem", height: "26rem" }}>
+                                <MDBCardHeader color="light-blue darken-4">{new Date(session.scheduledDate).toUTCString().replace('00:00:00 GMT','')}</MDBCardHeader>
+                                <a href={session.youtubeLink} class="card-link"><MDBCardImage className="img-fluid" src={session.youtubeImageUrl} waves /></a>
                                 <MDBCardBody>
-                                    <MDBCardTitle>{session.name}</MDBCardTitle>
-                                    <MDBCardText className="font-weight-bold">
-                                        {session.presenter}
-                                    </MDBCardText>
-                                    <MDBCardText className="font-weight-bolder">
-                                        {new Date(session.scheduledDate).toDateString()}
+                                    <MDBCardTitle >{session.name}</MDBCardTitle>
+                                    <MDBCardText className="font-weight-bold align-bottom">
+                                        {session.presenter}  <p class="blue-grey-text">({session.presenterRole}) at {session.presenterCompany}</p>
                                     </MDBCardText>
                                 </MDBCardBody>
                             </MDBCard>
-                        </MDBCol>
+                        </Link>
+                    </MDBCol>
                     ))}
                 </MDBRow>
             </MDBContainer>
