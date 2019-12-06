@@ -12,7 +12,7 @@ class ViewSession extends Component {
 
     componentDidMount() {
         console.log('componentDidMount-page-id:' + this.state.sessionId);
-        var apiUrl = 'https://nzaplfunc.azurewebsites.net/api/session/' + this.state.sessionId + '?code=GIZubiYLuPFOpCoaWchJrWkHal7LwcU3w/LZtJS2Fvea8fpUstFe9A==';
+        var apiUrl = 'https://nzapl.azure-api.net/aplapis/session/' + this.state.sessionId + '?subscription-key=af0afe00029d45b5af4abe29659f3319';
         fetch(apiUrl)
             .then(res => res.json())
             .then((data) => {

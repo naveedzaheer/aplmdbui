@@ -10,6 +10,8 @@ import SessionPage from './components/SessionPage';
 import ViewSession from './components/ViewSession';
 import About from './components/About';
 
+console.log(process.env.REACT_APP_API_KEY)
+
 const App = () => (
   <Router>
     <div className="flyout">
@@ -18,7 +20,7 @@ const App = () => (
         <Route exact path="/" component={HomePage} />
         <Route exact path="/Sessions" component={SessionPage} />
         <Route exact path="/Session/:id" component={ViewSession} />
-        <Route exact path="/Abount" component={About} />
+        <Route exact path="/About" component={About} />
         <Footer />
       </Fragment>
     </div>

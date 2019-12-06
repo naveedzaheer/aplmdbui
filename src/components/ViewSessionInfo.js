@@ -12,14 +12,14 @@ const ViewSessionInfo = ({ session }) => {
             </MDBRow>
             <MDBRow>
                 <MDBCol size="12">
-                    <h5 class="card-title">{session.description}</h5>
+                    <div className="embed-responsive embed-responsive-16by9">
+                        <iframe className="embed-responsive-item" src={session.youtubeLink}>Data</iframe>
+                    </div>
                 </MDBCol>
             </MDBRow>
             <MDBRow>
                 <MDBCol size="12">
-                    <div className="embed-responsive embed-responsive-16by9">
-                        <iframe className="embed-responsive-item" src={session.youtubeLink}>Data</iframe>
-                    </div>
+                    <h5 class="card-title">{session.description}</h5>
                 </MDBCol>
             </MDBRow>
             <MDBRow className="py-3">
@@ -30,7 +30,7 @@ const ViewSessionInfo = ({ session }) => {
                 <MDBCol size="2">                    
                 </MDBCol>
                 <MDBCol size="2" className="align-right">                    
-                    <p class="align-right">{new Date(session.scheduledDate).toDateString()}</p><p>Session Slides</p>
+                    <p class="align-right">{new Date(session.scheduledDate).toDateString()}</p><p><a href={session.slideDeckUrl}>Session Slides</a></p>
                 </MDBCol>
             </MDBRow>
         </MDBContainer>
