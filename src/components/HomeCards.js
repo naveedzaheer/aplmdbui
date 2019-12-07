@@ -22,7 +22,7 @@ class HomeCards extends Component {
     {
         if (session.status == 2)
         {
-            return (<MDBCard style={{ width: "22rem", height: "25rem" }}>
+            return (<MDBCard style={{ width: "22rem", height: "26rem" }}>
             <MDBCardHeader color="red darken-4">{new Date(session.scheduledDate).toDateString()}</MDBCardHeader>
             <MDBCardImage className="img-fluid" src="https://nzpowerlunchfiles.blob.core.windows.net/images/session-cancled.jpg" />
             <MDBCardBody>
@@ -35,7 +35,7 @@ class HomeCards extends Component {
         }
         else
         {
-            return (<MDBCard style={{ width: "22rem", height: "25rem" }}>
+            return (<MDBCard style={{ width: "22rem", height: "26rem" }}>
             <MDBCardHeader color="teal darken-1">{new Date(session.scheduledDate).toDateString()}</MDBCardHeader>
             <MDBCardImage className="img-fluid" src="https://nzpowerlunchfiles.blob.core.windows.net/images/apl-session-coming-soon.jpg" />
             <MDBCardBody>
@@ -56,7 +56,7 @@ class HomeCards extends Component {
                         <MDBCol md="4">
                             {((session.status) == 1) ?
                             (<Link to={'/Session/' + session.sessionId} class="card-link">
-                                <MDBCard style={{ width: "22rem", height: "25rem" }}>
+                                <MDBCard style={{ width: "22rem", height: "26rem" }}>
                                     <MDBCardHeader color="teal darken-4">{new Date(session.scheduledDate).toDateString()}</MDBCardHeader>
                                     <a href={session.youtubeLink} class="card-link"><MDBCardImage className="img-fluid" src={session.youtubeImageUrl} waves /></a>
                                     <MDBCardBody>
