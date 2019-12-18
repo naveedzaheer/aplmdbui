@@ -17,7 +17,7 @@ const About = props => {
           <p>In each 30-minutes weekly session, every Friday from 11-11:30 AM CST, this technical series will focus on keeping you up-to-date with <a href="https://azure.microsoft.com/en-us/updates/">new and appetizing updates to Azure cloud platform</a> and providing you a wholesome entree of Azure topics which you can begin leveraging in your environment immediately.</p>
           </MDBCardText>
           <div className="flex-row">
-            <a href="https://nzpowerlunchfiles.blob.core.windows.net/images/Azure Power Lunch Email Template - FY19.oft">Download meeting invite</a>
+            <a href="https://nzpowerlunchfiles.blob.core.windows.net/images/Azure Power Lunch-2020.ics">Download meeting invite</a>
             <a href="https://www.youtube.com/channel/UCaqQqG2zrK3vL4UMx6seOoA?sub_confirmation=1" style={{ marginLeft: "1.25rem" }}>Subscribe to the YouTube channel</a>
             <a href="mailto:azurepowerlunch@service.microsoft.com" style={{ marginLeft: "1.25rem" }}>Contact us</a>
           </div>

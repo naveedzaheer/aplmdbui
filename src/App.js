@@ -6,6 +6,7 @@ import { MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavbarToggler, MDBCollapse,
 import Header from './components/Header';
 import Footer from './components/Footer';
 import HomePage from './components/HomePage';
+import SessionPageFull from './components/SessionPageFull';
 import SessionPage from './components/SessionPage';
 import ViewSession from './components/ViewSession';
 import About from './components/About';

@@ -24,7 +24,7 @@ class HomeCards extends Component {
         {
             return (<MDBCard style={{ width: "22rem", height: "26rem" }}>
             <MDBCardHeader color="red darken-4">{new Date(session.scheduledDate).toDateString()}</MDBCardHeader>
-            <MDBCardImage className="img-fluid" src="https://nzpowerlunchfiles.blob.core.windows.net/images/session-cancled.jpg" />
+            <MDBCardImage className="img-fluid" src="https://nzpowerlunchfiles.blob.core.windows.net/images/canceled-session.jpg" />
             <MDBCardBody>
                 <MDBCardTitle >{session.name}</MDBCardTitle>
                 <MDBCardText className="font-weight-bold">
@@ -37,7 +37,7 @@ class HomeCards extends Component {
         {
             return (<MDBCard style={{ width: "22rem", height: "26rem" }}>
             <MDBCardHeader color="teal darken-1">{new Date(session.scheduledDate).toDateString()}</MDBCardHeader>
-            <MDBCardImage className="img-fluid" src="https://nzpowerlunchfiles.blob.core.windows.net/images/apl-session-coming-soon.jpg" />
+            <MDBCardImage className="img-fluid" src="https://nzpowerlunchfiles.blob.core.windows.net/images/coming-soon.png" />
             <MDBCardBody>
                 <MDBCardTitle >{session.name}</MDBCardTitle>
                 <MDBCardText className="font-weight-bold">
