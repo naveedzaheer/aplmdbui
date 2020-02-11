@@ -10,6 +10,7 @@ import SessionPageFull from './components/SessionPageFull';
 import SessionPage from './components/SessionPage';
 import ViewSession from './components/ViewSession';
 import About from './components/About';
+import Resources from './components/Resources';
 
 console.log(process.env.REACT_APP_API_KEY)
 
@@ -21,6 +22,7 @@ const App = () => (
         <Route exact path="/" component={HomePage} />
         <Route exact path="/Sessions" component={SessionPage} />
         <Route exact path="/Session/:id" component={ViewSession} />
+        <Route exact path="/Resources" component={Resources} />
         <Route exact path="/About" component={About} />
         <Footer />
       </Fragment>

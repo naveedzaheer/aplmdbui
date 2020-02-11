@@ -31,6 +31,9 @@ class Header extends Component {
               <MDBNavLink to="/Sessions">Sessions Catalog</MDBNavLink>
             </MDBNavItem>
             <MDBNavItem>
+              <MDBNavLink to="/Resources">Azure Resources</MDBNavLink>
+            </MDBNavItem>
+            <MDBNavItem>
               <MDBNavLink to="/About">About</MDBNavLink>
             </MDBNavItem>
           </MDBNavbarNav>

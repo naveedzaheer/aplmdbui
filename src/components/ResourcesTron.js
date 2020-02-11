@@ -7,7 +7,7 @@ const AboutTron = () => {
         <MDBJumbotron fluid className="light-blue lighten-5 mt-5">
             <MDBContainer>
                 <MDBRow>
-                    <MDBCol size="9"><h1 className="display-3">About the webinar</h1></MDBCol>
+                    <MDBCol size="9"><h1 className="display-3">Useful Azure resources</h1></MDBCol>
                     <MDBCol size="3"><div class="d-none d-xl-block"><img src={logo} class="img-responsive" alt="" /></div></MDBCol>
                 </MDBRow>
             </MDBContainer>
