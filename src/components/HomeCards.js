@@ -22,7 +22,7 @@ class HomeCards extends Component {
     {
         if (session.status == 2)
         {
-            return (<MDBCard style={{ width: "22rem", height: "26rem" }}>
+            return (<Link to={'/Session/' + session.sessionId} class="card-link"><MDBCard style={{ width: "22rem", height: "26rem" }}>
             <MDBCardHeader color="red darken-4">{new Date(session.scheduledDate).toDateString()}</MDBCardHeader>
             <MDBCardImage className="img-fluid" src="https://nzpowerlunchfiles.blob.core.windows.net/images/canceled-session.jpg" />
             <MDBCardBody>
@@ -31,11 +31,11 @@ class HomeCards extends Component {
                     {session.description}
                 </MDBCardText>
             </MDBCardBody>
-            </MDBCard>);
+            </MDBCard></Link>);
         }
         else
         {
-            return (<MDBCard style={{ width: "22rem", height: "26rem" }}>
+            return (<Link to={'/Session/' + session.sessionId} class="card-link"><MDBCard style={{ width: "22rem", height: "26rem" }}>
             <MDBCardHeader color="teal darken-1">{new Date(session.scheduledDate).toDateString()}</MDBCardHeader>
             <MDBCardImage className="img-fluid" src="https://nzpowerlunchfiles.blob.core.windows.net/images/coming-soon.png" />
             <MDBCardBody>
@@ -44,7 +44,7 @@ class HomeCards extends Component {
                     {session.presenter}  <p class="blue-grey-text">({session.presenterRole}) at {session.presenterCompany}</p>
                 </MDBCardText>
             </MDBCardBody>
-        </MDBCard>);
+        </MDBCard></Link>);
         }
     }
 

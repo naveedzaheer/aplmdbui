@@ -12,9 +12,11 @@ const ViewSessionInfo = ({ session }) => {
             </MDBRow>
             <MDBRow>
                 <MDBCol size="12">
-                    <div className="embed-responsive embed-responsive-16by9">
+                {((session.status) == 1) ?
+                    (<div className="embed-responsive embed-responsive-16by9">
                         <iframe className="embed-responsive-item" src={session.youtubeLink}>Data</iframe>
-                    </div>
+                    </div>) :
+                    (<div></div>)}
                 </MDBCol>
             </MDBRow>
             <MDBRow>
@@ -30,7 +32,7 @@ const ViewSessionInfo = ({ session }) => {
                 <MDBCol size="2">                    
                 </MDBCol>
                 <MDBCol size="2" className="align-right">                    
-                    <p class="align-right">{new Date(session.scheduledDate).toDateString()}</p><p><a href={session.slideDeckUrl}>Session Slides</a></p>
+                    <p class="align-right">{new Date(session.scheduledDate).toDateString()}</p>{((session.status) == 1) ? (<p><a href={session.slideDeckUrl}>Session Slides</a></p>) : (<p></p>)}
                 </MDBCol>
             </MDBRow>
         </MDBContainer>
