@@ -14,7 +14,7 @@ const HomePage = () => {
                 <HomeCards />
             </MDBRow>
             <MDBRow>
-                <b><Link to="/Sessions" class="card-title">More Sessions...</Link></b>
+                <b><Link to="/Sessions" class="card-title">Load More Sessions...</Link></b>
             </MDBRow>
         </MDBContainer>
     );
