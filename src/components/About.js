@@ -9,7 +9,7 @@ const About = props => {
     <MDBRow>
       <MDBCol size="12">
         <MDBCard className="card-body">
-          <MDBCardTitle>What is Azure Power Lunch</MDBCardTitle>
+          <MDBCardTitle>What is Azure Power Lunch Webinar?</MDBCardTitle>
           <MDBCardText>
           <p><a href="https://azure.microsoft.com/en-us/">Microsoft Azure</a> offers a comprehensive set of cloud services, integrated tools, DevOps support, and a global network of datacenters.</p>
           <p className="font-weight-bold">Are you ready to learn how to utilize the power of Azure cloud to modernize your data center, build next generation applications or gain insights into your data? </p>
