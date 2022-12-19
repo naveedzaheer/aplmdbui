@@ -13,7 +13,7 @@ const Infotron = () => {
                 <MDBCardTitle className="h1-responsive pt-3 m-5 font-bold">Azure Power Lunch</MDBCardTitle>
                 <div class="h2 alert alert-danger" role="alert">
                   Azure Power Lunch is taking a break for the Holidays. 
-                  <p>We will be back with more exciting Azure content from January 20th, 2023 </p>
+                  <p>We will be back with more exciting Azure content from January 20th, 2023. </p>
                 </div>
                 <p className="mx-5 mb-5">Azure Power Lunch is a 30-minute weekly seminar every Friday from 11-11:30 AM CST. It is a great opportunity to learn about different Azure topics from Microsoft Azure Solution architecture team.
                 </p>
