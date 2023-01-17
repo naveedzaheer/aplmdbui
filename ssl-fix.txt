@@ -1,0 +1,8 @@
+Solution
+As a workaround solution you can fix this by using the legacy provider for openssl. So, you need to edit the package.json file under your application’s root directory and check for the following lines and replace them accordingly.
+
+replace "start": "react-scripts start" by "start": "react-scripts --openssl-legacy-provider start"
+replace "build": "react-scripts build" by "build": "react-scripts --openssl-legacy-provider build"
+set the follwing env variable:
+set NODE_OPTIONS=--openssl-legacy-provider
+https://www.newline.co/@kchan/how-to-fix-the-error-errorerror0308010cdigital-envelope-routinesunsupported--0f8d3f17
